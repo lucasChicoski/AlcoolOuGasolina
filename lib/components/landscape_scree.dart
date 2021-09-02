@@ -37,6 +37,7 @@ class _LandScapeScreenState extends State<LandScapeScreen> {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
                             child: TextField(
+                              keyboardType: TextInputType.number,
                               decoration: InputDecoration(
                                   prefix: Text("R\$"),
                                   labelText: 'Gasolina',
@@ -55,6 +56,7 @@ class _LandScapeScreenState extends State<LandScapeScreen> {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
                             child: TextField(
+                              keyboardType: TextInputType.number,
                               decoration: InputDecoration(
                                   prefix: Text("R\$"),
                                   labelText: 'Alcool',
@@ -129,6 +131,7 @@ class _LandScapeScreenState extends State<LandScapeScreen> {
                                             BorderRadius.circular(15)),
                                     elevation: 20,
                                     child: TextField(
+                                      keyboardType: TextInputType.number,
                                       decoration: InputDecoration(
                                           filled: false,
                                           fillColor:
@@ -154,6 +157,7 @@ class _LandScapeScreenState extends State<LandScapeScreen> {
                                             BorderRadius.circular(15)),
                                     elevation: 20,
                                     child: TextField(
+                                      keyboardType: TextInputType.number,
                                       decoration: InputDecoration(
                                           filled: false,
                                           fillColor:
@@ -228,6 +232,7 @@ class _LandScapeScreenState extends State<LandScapeScreen> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15)),
                           child: TextField(
+                            keyboardType: TextInputType.number,
                             decoration: InputDecoration(
                                 labelText: 'Preço da Gasolina',
                                 filled: false,
@@ -245,6 +250,7 @@ class _LandScapeScreenState extends State<LandScapeScreen> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15)),
                           child: TextField(
+                            keyboardType: TextInputType.number,
                             decoration: InputDecoration(
                                 labelText: 'Preço do Alcool',
                                 filled: false,
