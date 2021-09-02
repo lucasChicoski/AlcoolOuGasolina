@@ -93,7 +93,7 @@ class _LandScapeScreenState extends State<LandScapeScreen> {
           ),
         );
       } else {
-        if (constraints.maxWidth > 700) {
+        if (constraints.maxWidth >= 700) {
           return Center(
             child: Container(
               width: constraints.maxWidth * 0.8,
@@ -125,7 +125,8 @@ class _LandScapeScreenState extends State<LandScapeScreen> {
                                   width: 300,
                                   child: Card(
                                     shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(15)),
+                                        borderRadius:
+                                            BorderRadius.circular(15)),
                                     elevation: 20,
                                     child: TextField(
                                       decoration: InputDecoration(
@@ -149,7 +150,8 @@ class _LandScapeScreenState extends State<LandScapeScreen> {
                                   width: 300,
                                   child: Card(
                                     shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(15)),
+                                        borderRadius:
+                                            BorderRadius.circular(15)),
                                     elevation: 20,
                                     child: TextField(
                                       decoration: InputDecoration(
@@ -202,7 +204,87 @@ class _LandScapeScreenState extends State<LandScapeScreen> {
             ),
           );
         } else {
-          return Container();
+          return Center(
+            child: Card(
+              child: Container(
+                width: constraints.maxWidth * 0.95,
+                height: constraints.maxHeight * 0.95,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Container(
+                        child: Image.asset(
+                          wallpaper,
+                          width: 250,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        width: 250,
+                        child: Card(
+                          elevation: 5,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                          child: TextField(
+                            decoration: InputDecoration(
+                                labelText: 'Preço da Gasolina',
+                                filled: false,
+                                prefix: Text("R\$"),
+                                prefixIcon: Icon(Mdi.gasStation),
+                                border: OutlineInputBorder(
+                                    borderSide: BorderSide.none)),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 250,
+                        child: Card(
+                          elevation: 5,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                          child: TextField(
+                            decoration: InputDecoration(
+                                labelText: 'Preço do Alcool',
+                                filled: false,
+                                prefix: Text("R\$"),
+                                prefixIcon: Icon(Mdi.gasStation),
+                                border: OutlineInputBorder(
+                                    borderSide: BorderSide.none)),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        width: 150,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10))),
+                          onPressed: () {},
+                          child: Text("Calcular"),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Container(
+                        child: Card(
+                          elevation: 2,
+                          child: Padding(
+                              padding: EdgeInsets.all(20),
+                              child: Text("asdasdasdasdasdasd")),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          );
         }
       }
     });
