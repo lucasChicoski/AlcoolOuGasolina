@@ -16,8 +16,8 @@ class _LandScapeScreenState extends State<LandScapeScreen> {
         return Center(
           child: Card(
             child: Container(
-              width: constraints.maxWidth * 0.6,
-              height: double.infinity,
+               width: constraints.maxWidth * 0.95,
+               height: double.infinity,
               // color: Colors.yellow,
               child: SingleChildScrollView(
                 child: Column(
@@ -26,8 +26,8 @@ class _LandScapeScreenState extends State<LandScapeScreen> {
                         padding: EdgeInsets.fromLTRB(0, 10, 0, 15),
                         child: Text(
                             "Qual melhor combustível para colocar em seu veículo")),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    Wrap(
+                      // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
                           width: 150,
@@ -47,7 +47,7 @@ class _LandScapeScreenState extends State<LandScapeScreen> {
                             ),
                           ),
                         ),
-                        Icon(Mdi.gasStation),
+                        Padding(padding: EdgeInsets.fromLTRB(10, 15, 10, 0),child: Icon(Mdi.gasStation)),
                         Container(
                           width: 150,
                           height: 50,
