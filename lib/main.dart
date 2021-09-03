@@ -4,7 +4,7 @@ import 'package:get_it/get_it.dart';
 
 import 'Screens/convert_fuel.dart';
 
-main(List<String> args) {
+main() {
   instances();
   runApp(MainApp());
 }
