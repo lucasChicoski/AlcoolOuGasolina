@@ -47,7 +47,10 @@ class _PortraitScreenState extends State<PortraitScreen> {
                         height: 20,
                       ),
                       CalculateButton(
-                          calculateController.validationButton ? calculateController.calculateFunction : null),
+                          calculateController.validationButton
+                              ? calculateController.calculateFunction
+                              : null,
+                          150),
                       SizedBox(
                         height: 40,
                       ),
@@ -56,7 +59,10 @@ class _PortraitScreenState extends State<PortraitScreen> {
                           elevation: 2,
                           child: Padding(
                               padding: EdgeInsets.all(20),
-                              child: Text(calculateController.result, style: TextStyle(fontSize: 20),)),
+                              child: Text(
+                                calculateController.result,
+                                style: TextStyle(fontSize: 20),
+                              )),
                         ),
                       )
                     ],
@@ -66,172 +72,58 @@ class _PortraitScreenState extends State<PortraitScreen> {
             ),
           ),
         );
-      }
-      if (constraint.maxWidth <= 540 && constraint.maxWidth > 280) {
-        return Center(
-          child: Card(
-            child: Container(
-              width: constraint.maxWidth * 0.95,
-              height: constraint.maxHeight * 0.95,
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Container(
-                      child: Image.asset(
-                        wallpaper,
-                        width: 250,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      width: 250,
-                      child: Card(
-                        elevation: 5,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15)),
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              labelText: 'Preço da Gasolina',
-                              filled: false,
-                              prefix: Text("R\$"),
-                              prefixIcon: Icon(Mdi.gasStation),
-                              border: OutlineInputBorder(
-                                  borderSide: BorderSide.none)),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      width: 250,
-                      child: Card(
-                        elevation: 5,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15)),
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              labelText: 'Preço do Alcool',
-                              filled: false,
-                              prefix: Text("R\$"),
-                              prefixIcon: Icon(Mdi.gasStation),
-                              border: OutlineInputBorder(
-                                  borderSide: BorderSide.none)),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      width: 150,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10))),
-                        onPressed: () {},
-                        child: Text("Calcular"),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    Container(
-                      child: Card(
-                        elevation: 2,
-                        child: Padding(
-                            padding: EdgeInsets.all(20),
-                            child: Text("asdasdasdasdasdasd")),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
-        );
       } else if (constraint.maxWidth <= 280) {
         return Center(
           child: Card(
             child: Container(
               width: constraint.maxWidth * 0.95,
               height: constraint.maxHeight * 0.95,
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Container(
-                      child: Image.asset(
-                        wallpaper,
-                        width: 250,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      width: 250,
-                      child: Card(
-                        elevation: 5,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15)),
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              labelText: 'Preço da Gasolina',
-                              filled: false,
-                              prefix: Text("R\$"),
-                              prefixIcon: Icon(Mdi.gasStation),
-                              border: OutlineInputBorder(
-                                  borderSide: BorderSide.none)),
+              child: SingleChildScrollView(child: Observer(
+                builder: (_) {
+                  return Column(
+                    children: [
+                      Container(
+                        child: Image.asset(
+                          wallpaper,
+                          width: 250,
                         ),
                       ),
-                    ),
-                    Container(
-                      width: 250,
-                      child: Card(
-                        elevation: 5,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15)),
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              labelText: 'Preço do Alcool',
-                              filled: false,
-                              prefix: Text("R\$"),
-                              prefixIcon: Icon(Mdi.gasStation),
-                              border: OutlineInputBorder(
-                                  borderSide: BorderSide.none)),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      InputTextBase(
+                        'Preço da Gasolina',
+                        calculateController.setGasoline,
+                      ),
+                      InputTextBase(
+                        'Preço da Álcool',
+                        calculateController.setAlcohol,
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      CalculateButton(
+                          calculateController.validationButton
+                              ? calculateController.calculateFunction
+                              : null,
+                          150),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Container(
+                        child: Card(
+                          elevation: 2,
+                          child: Padding(
+                              padding: EdgeInsets.all(20),
+                              child: Text(
+                                calculateController.result,
+                              )),
                         ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      width: 150,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10))),
-                        onPressed: () {},
-                        child: Text("Calcular"),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    Container(
-                      child: Card(
-                        elevation: 2,
-                        child: Padding(
-                            padding: EdgeInsets.all(20),
-                            child: Text("asdasdasdasdasdasd")),
-                      ),
-                    )
-                  ],
-                ),
-              ),
+                      )
+                    ],
+                  );
+                },
+              )),
             ),
           ),
         );
@@ -242,78 +134,51 @@ class _PortraitScreenState extends State<PortraitScreen> {
               width: constraint.maxWidth * 0.95,
               height: constraint.maxHeight * 0.95,
               child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Container(
-                      child: Image.asset(
-                        wallpaper,
-                        width: 500,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      width: 250,
-                      child: Card(
-                        elevation: 5,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15)),
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              labelText: 'Preço da Gasolina',
-                              filled: false,
-                              prefix: Text("R\$"),
-                              prefixIcon: Icon(Mdi.gasStation),
-                              border: OutlineInputBorder(
-                                  borderSide: BorderSide.none)),
+                child: Observer(
+                  builder: (_) {
+                    return Column(
+                      children: [
+                        Container(
+                          child: Image.asset(
+                            wallpaper,
+                            width: 500,
+                          ),
                         ),
-                      ),
-                    ),
-                    Container(
-                      width: 250,
-                      child: Card(
-                        elevation: 5,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15)),
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              labelText: 'Preço do Alcool',
-                              filled: false,
-                              prefix: Text("R\$"),
-                              prefixIcon: Icon(Mdi.gasStation),
-                              border: OutlineInputBorder(
-                                  borderSide: BorderSide.none)),
+                        SizedBox(
+                          height: 20,
                         ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      width: 150,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10))),
-                        onPressed: () {},
-                        child: Text("Calcular"),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    Container(
-                      child: Card(
-                        elevation: 2,
-                        child: Padding(
-                            padding: EdgeInsets.all(20),
-                            child: Text("asdasdasdasdasdasd")),
-                      ),
-                    )
-                  ],
+                        InputTextBase(
+                          'Preço da Gasolina',
+                          calculateController.setGasoline,
+                        ),
+                        InputTextBase(
+                          'Preço da Álcool',
+                          calculateController.setAlcohol,
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        CalculateButton(
+                            calculateController.validationButton
+                                ? calculateController.calculateFunction
+                                : null,
+                            150),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        Container(
+                          child: Card(
+                            elevation: 2,
+                            child: Padding(
+                                padding: EdgeInsets.all(20),
+                                child: Text(
+                                  calculateController.result,
+                                )),
+                          ),
+                        )
+                      ],
+                    );
+                  },
                 ),
               ),
             ),

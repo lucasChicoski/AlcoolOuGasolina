@@ -22,7 +22,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Álcool ou Gasolina",
       home: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(centerTitle:true, title:  Text("Gasolina ou Alcool",),),
         body: ConvertFuel(),
       ),
     );
