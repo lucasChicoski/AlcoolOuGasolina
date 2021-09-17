@@ -1,4 +1,4 @@
-#Fri Sep 03 12:28:39 BRT 2021
-base.0=C\:\\Users\\Lucas\\Documents\\Produtividade\\Projetos\\ProjetosFlutter\\AlcoolOuGasolina\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Fri Sep 17 12:59:32 BRT 2021
+base.0=D\:\\Projetos\\AlcoolOuGasolina\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

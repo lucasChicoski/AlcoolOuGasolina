@@ -5,12 +5,13 @@ import 'package:flutter/material.dart';
 class ConvertFuel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return OrientationBuilder(builder: (context, orientation) {
-      return Visibility(
-        visible: orientation == Orientation.portrait ,
-        child: PortraitScreen(),
-        replacement: LandScapeScreen(),
-      );
-    });
+    bool isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
+
+    if (isPortrait) {
+      return PortraitScreen();
+    } else {
+      return LandScapeScreen();
+    }
   }
 }
